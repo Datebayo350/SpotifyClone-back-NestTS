@@ -1,0 +1,11 @@
+name: Lint and format the code
+run-name: ${{ github.actor }} is formating the code
+on: [push]
+jobs:
+  lint-and-format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: yarn install
+      # - run: yarn lint:fix
+      - run: yarn prettier:format
